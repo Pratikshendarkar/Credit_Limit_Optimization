@@ -1,13 +1,6 @@
 # Optimizing Acceptance Threshold in Credit Scoring using Reinforcement Learning
 <p align = "justify">
-  This is a repository for a research project conducted in 2017-2018 at Creditstar Group, Estonia under the supervision of Karl Märka, Head of Data Science at Creditstar Group, and Oliver Lukason, PhD at the University of Tartu.
-
-The research article can be found [here](../master/Article.pdf).
-
-The source code for the project can be found in the [Source](../master/Source) directory.
-
-**WARNING:** the project has many dependencies on outdated packages. So I wouldn't try to revive it but instead, use and adapt updated external packages used there, such as https://www.gymlibrary.ml/, to the developed theoretical concept using the source code as an example.
-
+  
 </p>
 
 ## Table of Contents
