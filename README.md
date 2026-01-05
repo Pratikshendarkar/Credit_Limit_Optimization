@@ -129,11 +129,13 @@ This combines the strengths of both models for more robust and stable prediction
 
 ### Credit Limit Increase Eligibility:
 
-| Eligibility Level | Recommendation | Count | Percentage |
-|------------------|-----------------|-------|-----------|
-| **Strong** (>0.7) | Recommend immediate increase | ~5-8% |
-| **Moderate** (0.4-0.7) | Consider increase based on risk | ~15-20% |
-| **Not Recommended** (<0.4) | Hold or decline increase | ~72-80% |
+| Eligibility Level | Recommendation | Percentage |
+|------------------|-----------------|-----------|
+| **Strong** (>0.7) | Recommend immediate increase | ~8-12% |
+| **Moderate** (0.4-0.7) | Consider increase based on risk | ~15-25% |
+| **Not Recommended** (<0.4) | Hold or decline increase | ~65-75% |
+
+**Key Finding**: The low AUC scores (0.54-0.55) for increase eligibility prediction indicate that this is a challenging classification problem. The majority of customers (>65%) fall into the "Not Recommended" category, suggesting that credit limit increases are selective and driven by specific behavioral and financial criteria captured by the engineered features.
 
 ---
 
@@ -204,7 +206,11 @@ Random Forest and XGBoost show different feature importance rankings, suggesting
 - **07_Age_Income_Distribution.png** - Demographic patterns in predictions
 - **08_Probability_Distributions.png** - Prediction confidence distributions
 
----
+<img width="1164" height="884" alt="image" src="https://github.com/user-attachments/assets/acae4fa9-581e-43e2-8318-a79748b3fbb0" />
+<img width="1173" height="580" alt="image" src="https://github.com/user-attachments/assets/4d61dfc2-9072-4849-aa05-b532a645174c" />
+<img width="1157" height="836" alt="image" src="https://github.com/user-attachments/assets/fc626491-e0f4-4983-9699-c874e83ae4a1" />
+
+
 
 ## 🚀 Implementation Guide
 
@@ -264,38 +270,14 @@ eligible.to_csv('credit_increase_campaign.csv')
 
 ---
 
-## 🔄 Recommended Next Steps
 
-1. **Threshold Optimization**: Conduct cost-benefit analysis to tune decision thresholds based on:
-   - Cost of false positives (denied legitimate increase requests)
-   - Cost of false negatives (given increase to eventual defaulters)
-   - Expected revenue from limit increases
 
-2. **Bias Audit**: Check for protected characteristic bias (age, gender) in model predictions
 
-3. **Business Rules Integration**: Combine ML predictions with business rules:
-   - Minimum tenure requirements for increases
-   - Income verification thresholds
-   - Recent fraud flags
+---
 
-4. **A/B Testing**: Validate predictions with pilot campaigns on sample customer segments
-
-5. **Model Monitoring**: Establish monitoring dashboard for:
-   - Prediction drift over time
-   - Actual vs. predicted outcomes
-   - Model performance degradation alerts
-
-6. **Retraining Schedule**: Implement quarterly retraining with recent customer data
-
---
 ## 📚 References
 
 - **SMOTE**: Chawla et al., 2002. "SMOTE: Synthetic Minority Over-sampling Technique"
 - **Random Forest**: Breiman, 2001. "Random Forests"
 - **XGBoost**: Chen & Guestrin, 2016. "XGBoost: A Scalable Tree Boosting System"
 - **ROC-AUC**: Fawcett, 2006. "An Introduction to ROC Analysis"
-
----
-
-**Last Updated**: January 2025  
-**Status**: ✓ Production Ready
